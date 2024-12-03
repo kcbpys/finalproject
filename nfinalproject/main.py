@@ -46,7 +46,6 @@ async def get_stock_data(ticker: str):
         else:
             daily_change_percent = "N/A"
 
-        market_cap = 0
         # Handle market cap when it is None
         raw_market_cap = info.get("marketCap", None)
         if raw_market_cap is not None:
@@ -128,6 +127,9 @@ async def get_stock_data(ticker: str):
             all_volume = volume + " / " + avg_volume
         else:
             all_volume = "N/A"
+        
+        if day_change == "N/A":
+            daily_change_percent = " Intraday price not avail."
 
 
         data = {
