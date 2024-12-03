@@ -31,7 +31,7 @@ async function fetchStockData() {
             resultsDiv.innerHTML = `
                 <b style="text-align: center;"><u>${data.company_name || "N/A"}</u></b>
                 <p><strong>Price:</strong> <span style="color:${priceColor};">$${data.price || "N/A"}</span></p>
-                <p><strong>Daily Change:</strong> ${data.daily_change || "N/A"}%</p>
+                <p><strong>Daily Change:</strong> ${data.daily_change || "N/A"}</p>
                 <p><strong>Market Cap:</strong> ${data.market_cap || "N/A"}</p>
                 <p><strong>Vol/Avg:</strong> ${data.volume || "N/A"}</p>
                 <p><strong>52 Week High:</strong> ${data.year_high || "N/A"}</p>

@@ -54,9 +54,7 @@ async def get_stock_data(ticker: str):
             and ndaily_change_percent != "N/A"
             and daily_change_percent >= 0
         ):
-            daily_change_percent = " or +" + str(
-                daily_change_percent
-            )  # adds a '+' to the percent change if it is positive
+            daily_change_percent = " or +" + str(daily_change_percent)
         elif (
             daily_change_percent != "N/A"
             and ndaily_change_percent != "N/A"
@@ -65,6 +63,7 @@ async def get_stock_data(ticker: str):
             daily_change_percent = " or " + str(daily_change_percent)
         else:
             daily_change_percent = "N/A"
+
 
         # Handle market cap when it is None - index fund bypass method, as mktcap is returned as None through yfinance api.
         raw_market_cap = info.get("marketCap", None)
