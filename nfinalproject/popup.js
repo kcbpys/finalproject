@@ -2,7 +2,7 @@
 async function fetchStockData() {
     const ticker = document.getElementById("ticker").value.trim();
     const resultsDiv = document.getElementById("results");
-    resultsDiv.innerHTML = "Just a moment...";
+    resultsDiv.innerHTML = "Loading...";
     if (!ticker) {
         resultsDiv.innerHTML = "Enter a stock ticker.";
         return;
@@ -41,7 +41,7 @@ async function fetchStockData() {
             `;
         }
     } catch (err) {
-        resultsDiv.innerHTML = `Error: ${err.message}`;
+        resultsDiv.innerHTML = `Error:= ${err.message}`;
     }
 }
 
