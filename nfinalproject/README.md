@@ -1,9 +1,9 @@
 Tyler Markovsky
 
-Project Overview: Within this project, I created a Chrome Extension that fetches stock price/info relevant to whether I would invest in a company or not. 
+Project Overview: Within this project, I created a Chrome Extension that fetches stock price/info relevant to whether I would invest in a company or not. This app shows stock price, daily performance in points and % change, market cap, beta, trailing and forward P/E and the company name. 
 
 
-Usage Guidelines: Open the chrome extension (the chart favicon), and enter a stock ticker. Then, you can either click on the button or press 'return' on the keyboard for the results to generate. 
+Usage Guidelines: Open the chrome extension (the chart favicon), and enter a stock ticker. Then, you can either click on the button or press 'return' on the keyboard for the results to generate. Then, the results will be displayed. 
 
 Dependencies: I used FastAPI and YFinance API across Python (backend), and Javascript and HTML on the frontend. I also used Devtools section of Chrome to publish this as a local extension and am currently looking into publishing this code using render.com.
 
