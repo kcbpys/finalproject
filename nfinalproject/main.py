@@ -155,7 +155,8 @@ async def get_stock_data(ticker: str):
             all_volume = "N/A"
 
         if day_change == "N/A":
-            daily_change_percent = " Intraday price not avail."
+            daily_change_percent = "Intraday price not available"
+            day_change = ""
 
         # data dictionary established. Variables used in the data dictionary are the end result of the above ~120 lines of calculations and data extraction from yfinance.
         data = {
