@@ -26,8 +26,8 @@ async function fetchStockData() {
                     priceColor = "red"; // Negative change
                 }
             }
-            
-        const companyName = data.company_name || "N/A";
+            // Establishing of the data dictionary below using HTML as style parameters 
+        const companyName = data.company_name || "N/A"; 
             resultsDiv.innerHTML = `
                 <b style="text-align: center;"><u>${data.company_name || "N/A"}</u></b>
                 <p><strong>Price:</strong> <span style="color:${priceColor};">$${data.price || "N/A"}</span></p>
