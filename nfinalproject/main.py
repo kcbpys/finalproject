@@ -5,6 +5,7 @@ app = FastAPI()
 
 @app.get("/stock/{ticker}")
 async def get_stock_data(ticker: str):
+    
     try:
         stock = yf.Ticker(ticker)
         info = stock.info
