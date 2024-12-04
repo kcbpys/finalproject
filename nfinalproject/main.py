@@ -64,7 +64,6 @@ async def get_stock_data(ticker: str):
         else:
             daily_change_percent = "N/A"
 
-
         # Handle market cap when it is None - index fund bypass method, as mktcap is returned as None through yfinance api.
         raw_market_cap = info.get("marketCap", None)
         if raw_market_cap is not None:
@@ -86,7 +85,9 @@ async def get_stock_data(ticker: str):
         if current_price is not None and prev_close is not None:
             day_change = current_price - prev_close
             if day_change > 0:
-                day_change = "+" + str(round(day_change, 2))  # adds a '+' if stock rises in a day
+                day_change = "+" + str(
+                    round(day_change, 2)
+                )  # adds a '+' if stock rises in a day
             else:
                 day_change = str(
                     round(day_change, 2)
