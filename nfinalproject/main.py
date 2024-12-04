@@ -86,9 +86,7 @@ async def get_stock_data(ticker: str):
         if current_price is not None and prev_close is not None:
             day_change = current_price - prev_close
             if day_change > 0:
-                day_change = "+" + str(
-                    round(day_change, 2)
-                )  # adds a '+' if stock rises in a day
+                day_change = "+" + str(round(day_change, 2))  # adds a '+' if stock rises in a day
             else:
                 day_change = str(
                     round(day_change, 2)

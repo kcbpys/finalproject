@@ -35,7 +35,7 @@ async function fetchStockData() {
                 <p><strong>Market Cap:</strong> ${data.market_cap || "N/A"}</p>
                 <p><strong>Vol/Avg:</strong> ${data.volume || "N/A"}</p>
                 <p><strong>52 Week High:</strong> ${data.year_high || "N/A"}</p>
-                <p><strong>52 Week Low:</strong> ${data.year_low || "N/A"}</p>
+                <p><strong>52 Week Low:</strong> ${data.year_low || "N/A"}</p> 
                 <p><strong>PE Ratio (TTM/FTM):</strong> ${data.pe_ratio_total || "N/A"}</p>
                 <p><strong>Beta(5Y):</strong> ${data.beta || "N/A"}</p>
             `;
