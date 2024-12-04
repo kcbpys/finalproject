@@ -11,7 +11,7 @@ Project structure: main.py: the back-end of the file. All of the python code and
 
 Collaboration: This project was done fully by me, Tyler Markovsky. 
 
-Acknowledgements: Thank you to YFinanceAPI, FastAPI, render.com (for the possibility of making this app run on web servers) and ChatGPT (debugging, suggestions, etc.) in assisting me in making this project possible. Thank you to Google Chrome for the extension support and making it easy to create a Chrome extension with ease. Finally, thank you most to Professor Li for the support and guidance throughout this Fall 2024 semester and the help with this project. 
+Acknowledgements: Thank you to YFinanceAPI, FastAPI, render.com (for the possibility of making this app run on web servers) and ChatGPT (debugging, suggestions, etc.) in assisting me in making this project possible. Thank you to Google Chrome for the extension support and making it easy to create a Chrome extension with ease. Finally, thank you most to Professor Zhi Li for the support and guidance throughout this Fall 2024 semester and the help with this project. 
 
 Reflection:
 This project was a lot of fun for me. Not only will I use this application after this class is over, but the lessons and skills I learned along the way of spending hours and days coding this application are invaluable. 
