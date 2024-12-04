@@ -3,7 +3,7 @@ Tyler Markovsky
 Project Overview: Within this project, I created a Chrome Extension that fetches stock price/info relevant to whether I would invest in a company or not. This app shows the full company name, the stock price, daily performance in points and % change, market cap, beta, and trailing and forward P/E.
 
 
-Usage Guidelines: Open the chrome extension (the chart favicon), and enter a stock ticker. Then, you can either click on the button or press 'return' on the keyboard for the results to generate. Then, the results will be displayed. 
+Usage Guidelines: Open the chrome extension (the chart favicon), and enter a stock ticker. Then, you can either click on the button or press 'return' on the keyboard for the results to generate. Then, the results will be displayed. To activate the extension/website, the code of: "uvicorn main:app --reload" will have to be run to activate the uvicorn server. In addition, to add this locally run extension to your computer/Chrome browser, please follow the instructions here (https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world). 
 
 Dependencies: I used FastAPI and YFinance API across Python (backend), and Javascript and HTML on the frontend. I used the Devtools section of Chrome to publish this as a local extension and am currently looking into publishing this code using render.com. Update: attempted to publish on render.com, but could only get either front-end or backend working, never together. I will attempt to publish this again on render.com at a later date. 
 
@@ -11,7 +11,7 @@ Project structure: main.py: the back-end of the file. All of the python code and
 
 Collaboration: This project was done fully by me, Tyler Markovsky. 
 
-Acknowledgements: Thank you to YFinanceAPI, FastAPI, and ChatGPT (debugging, suggestions, etc.) in assisting me in making this project possible. 
+Acknowledgements: Thank you to YFinanceAPI, FastAPI, render.com (for the possibility of making this app run on web servers) and ChatGPT (debugging, suggestions, etc.) in assisting me in making this project possible. Thank you to Google Chrome for the extension support and making it easy to create a Chrome extension with ease. Finally, thank you most to Professor Li for the support and guidance throughout this Fall 2024 semester and the help with this project. 
 
 Reflection:
 This project was a lot of fun for me. Not only will I use this application after this class is over, but the lessons and skills I learned along the way of spending hours and days coding this application are invaluable. 
