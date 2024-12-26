@@ -110,7 +110,9 @@ async def get_stock_data(ticker: str):
         else:
             pe_trailing = "N/A"
         pe_forward = info.get("forwardPE")
-        if pe_forward is not None:
+        if pe_forward <0:
+            pe_forward = "N/A"
+        if pe_forward != "N/A":
             pe_forward = str(round(pe_forward, 2))
         else:
             pe_forward = "N/A"
