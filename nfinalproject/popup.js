@@ -2,16 +2,24 @@
 async function fetchStockData() {
     const ticker = document.getElementById("ticker").value.trim();
     const resultsDiv = document.getElementById("results");
-    resultsDiv.innerHTML = "Loading...";
+    const fetchButton = document.getElementById("fetchData");
+
     if (!ticker) {
-        resultsDiv.innerHTML = "Enter a stock ticker.";
+        resultsDiv.innerHTML = "Please enter a stock ticker.";
         return;
     }
-    
+    if (!/^[A-Za-z0-9-.]+$/.test(ticker)) {
+        resultsDiv.innerHTML = "Invalid ticker format. Use letters, numbers, or hyphens.";
+        return;
+    }
+
+    resultsDiv.innerHTML = "Loading...";
+    fetchButton.disabled = true;
+
     try {
-        const response = await fetch(`http://127.0.0.1:8000/stock/${ticker}`);
+        const response = await fetch(`https://your-app.onrender.com/stock/${ticker}`);
         if (!response.ok) {
-            throw new Error("Ticker not found");
+            throw new Error("Ticker not found or server error");
         }
         const data = await response.json();
         if (data.error) {
@@ -19,19 +27,14 @@ async function fetchStockData() {
         } else {
             // Determine color based on daily change percentage
             let priceColor = "black"; // Default color
-            if (data.ndaily_change_percent !== null && !isNaN(data.ndaily_change_percent)) {
-                if (data.ndaily_change_percent > 0) {
-                    priceColor = "green"; // Positive change
-                } else if (data.ndaily_change_percent < 0) {
-                    priceColor = "red"; // Negative change
-                }
+            if (data.daily_change_percent !== "N/A" && !isNaN(data.daily_change_percent)) {
+                priceColor = data.daily_change_percent > 0 ? "green" : "red";
             }
-            // Establishing of the data dictionary below using HTML as style parameters 
-        const companyName = data.company_name || "N/A"; 
+            // Display data
             resultsDiv.innerHTML = `
                 <b style="text-align: center;"><u>${data.company_name || "N/A"}</u></b>
                 <p><strong>Price:</strong> <span style="color:${priceColor};">$${data.price || "N/A"}</span></p>
-                <p><strong>Daily Change:</strong> ${data.daily_change || "N/A"}</p>
+                <p><strong>Daily Change:</strong> ${data.daily_change_amount || "N/A"} (${data.daily_change_percent || "N/A"}%)</p>
                 <p><strong>Market Cap:</strong> ${data.market_cap || "N/A"}</p>
                 <p><strong>Vol/Avg:</strong> ${data.volume || "N/A"}</p>
                 <p><strong>52 Week High:</strong> ${data.year_high || "N/A"}</p>
@@ -41,7 +44,9 @@ async function fetchStockData() {
             `;
         }
     } catch (err) {
-        resultsDiv.innerHTML = `Error:= ${err.message}`;
+        resultsDiv.innerHTML = `Error: ${err.message}`;
+    } finally {
+        fetchButton.disabled = false;
     }
 }
 
