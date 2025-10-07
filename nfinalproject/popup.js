@@ -17,7 +17,7 @@ async function fetchStockData() {
     fetchButton.disabled = true;
 
     try {
-        const response = await fetch(`https://your-app.onrender.com/stock/${ticker}`);
+        const response = await fetch(`https://publish-finalproject.onrender.com/stock/${ticker}`);
         if (!response.ok) {
             throw new Error("Ticker not found or server error");
         }
